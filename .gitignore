@@ -1,0 +1,41 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*`$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Output
+output/
+*.log
+*.json
+*.pdf
+*.html
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Azure
+.azure/
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage

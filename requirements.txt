@@ -1,0 +1,22 @@
+# Azure AI SDK
+azure-ai-projects==1.0.0b3
+azure-identity==1.15.0
+
+# Core dependencies
+python-dotenv==1.0.0
+pydantic==2.5.3
+pyyaml==6.0.1
+aiohttp==3.9.1
+
+# UI/Display
+rich==13.7.0
+
+# OpenAI (for compatibility)
+openai==1.7.2
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# Optional
+requests==2.31.0

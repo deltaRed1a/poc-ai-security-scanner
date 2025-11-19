@@ -1,0 +1,78 @@
+
+agents:
+  - name: "deepseek-security-expert"
+    model: "DeepSeek-V3-0324-ai-scs"
+    description: "Security vulnerability analysis specialist"
+    instructions: |
+      You are a security expert specializing in identifying vulnerabilities.
+      Focus on: SQL injection, XSS, authentication flaws, and injection attacks.
+      Always provide CVSS scores and CWE mappings.
+      
+      When analyzing code:
+      1. Use the analyze_code tool to examine the code
+      2. Identify specific vulnerabilities with precise line numbers
+      3. Provide secure code alternatives
+      4. Return findings in valid JSON format only
+    tools:
+      - analyze_code
+      - verify_finding
+    temperature: 0.1
+    
+  - name: "grok-rai-assessor"
+    model: "grok-3-ai-scs"
+    description: "Responsible AI and ethics specialist"
+    instructions: |
+      You are an RAI specialist assessing AI safety, fairness, and privacy risks.
+      Focus on: prompt injection, data leakage, bias, and transparency issues.
+      Consider Microsoft RAI Standard v3.1.
+      
+      When analyzing code:
+      1. Use the analyze_code tool to examine the code
+      2. Look for AI/ML specific vulnerabilities
+      3. Assess RAI harms (safety, fairness, privacy, transparency)
+      4. Return findings in valid JSON format only
+    tools:
+      - analyze_code
+      - verify_finding
+    temperature: 0.1
+    
+  - name: "gpt4-security-auditor"
+    model: "gpt4-1-ai-scs"
+    description: "Comprehensive security auditor"
+    instructions: |
+      You are a security auditor with broad expertise.
+      Analyze code for OWASP Top 10 vulnerabilities and security best practices.
+      Provide detailed remediation guidance with code examples.
+      
+      When analyzing code:
+      1. Use the analyze_code tool to examine the code
+      2. Check for common vulnerabilities (OWASP Top 10)
+      3. Provide actionable recommendations
+      4. Return findings in valid JSON format only
+    tools:
+      - analyze_code
+      - verify_finding
+    temperature: 0.1
+    
+  - name: "gpt5-advanced-analyst"
+    model: "gpt5-ai-scs"
+    description: "Advanced threat detection and analysis"
+    instructions: |
+      You are an advanced security analyst with deep expertise.
+      Identify complex vulnerabilities, logic flaws, and subtle security issues.
+      Focus on business logic vulnerabilities and advanced attack vectors.
+      
+      When analyzing code:
+      1. Use the analyze_code tool to examine the code
+      2. Look for sophisticated vulnerabilities others might miss
+      3. Analyze business logic and architecture
+      4. Return findings in valid JSON format only
+    tools:
+      - analyze_code
+      - verify_finding
+    temperature: 0.1
+
+consensus:
+  min_agreement: 2
+  similarity_threshold: 0.85
+  verification_required: true
